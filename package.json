@@ -1,0 +1,10 @@
+{
+  "name": "cv-workspace",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix ./CV run dev",
+    "build": "npm --prefix ./CV run build",
+    "lint": "npm --prefix ./CV run lint",
+    "preview": "npm --prefix ./CV run preview"
+  }
+}

@@ -1,0 +1,262 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* 🌈 ANIMATED BACKGROUND */
+body {
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #0ea5e9, #334155);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* BACKGROUND ANIMATION */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🌟 FLOATING GLOW EFFECT */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(90px);
+  z-index: -1;
+  animation: floatGlow 8s infinite alternate ease-in-out;
+}
+
+body::before {
+  top: 10%;
+  left: 10%;
+  background: rgba(96, 165, 250, 0.25);
+}
+
+body::after {
+  bottom: 10%;
+  right: 10%;
+  background: rgba(59, 130, 246, 0.25);
+}
+
+@keyframes floatGlow {
+  from { transform: translateY(0px) scale(1); }
+  to { transform: translateY(-50px) scale(1.2); }
+}
+
+/* CONTAINER */
+.portfolio {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 0;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+/* ✨ BLINKING NAME */
+.hero h1 {
+  font-size: 55px;
+  margin-bottom: 10px;
+  animation: blinkGlow 2s infinite;
+}
+
+@keyframes blinkGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px #60a5fa, 0 0 20px #3b82f6;
+    opacity: 1;
+  }
+  50% {
+    text-shadow: 0 0 5px #60a5fa;
+    opacity: 0.85;
+  }
+}
+
+.hero h3 {
+  color: #60a5fa;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  line-height: 1.8;
+}
+
+/* PROFILE IMAGE */
+.profile-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #60a5fa;
+  box-shadow: 0 0 25px rgba(96,165,250,0.4);
+}
+
+/* BUTTONS */
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 12px 25px;
+  background: #2563eb;
+  color: white;
+  border-radius: 10px;
+  transition: 0.3s;
+  animation: pulseBtn 2s infinite;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.secondary {
+  background: #475569;
+}
+
+/* BUTTON PULSE */
+@keyframes pulseBtn {
+  0% { box-shadow: 0 0 0px #2563eb; }
+  50% { box-shadow: 0 0 15px #2563eb; }
+  100% { box-shadow: 0 0 0px #2563eb; }
+}
+
+/* GLASS CARDS */
+.glass-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 25px;
+  transition: 0.3s;
+}
+
+.glass-card:hover {
+  box-shadow: 0 0 25px rgba(96,165,250,0.3);
+  transform: translateY(-5px);
+}
+
+.glass-card h2 {
+  color: #60a5fa;
+  margin-bottom: 20px;
+}
+
+/* TIMELINE */
+.timeline-item {
+  border-left: 4px solid #60a5fa;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.timeline-item span {
+  color: #93c5fd;
+}
+
+/* SKILLS */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skills span {
+  background: #2563eb;
+  padding: 10px 18px;
+  border-radius: 25px;
+}
+
+/* PROJECT GRID */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 20px rgba(96,165,250,0.4);
+}
+
+.icon {
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+/* STRENGTHS */
+.strength-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.strength-card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.strength-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(96,165,250,0.3);
+}
+
+/* LIST */
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .profile-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+}
