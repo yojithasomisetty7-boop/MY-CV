@@ -1,0 +1,1 @@
+{"buildCommand": "cd CV && npm install && npm run build", "outputDirectory": "CV/dist"}
